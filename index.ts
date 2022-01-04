@@ -1,5 +1,5 @@
 import express from 'express';
-import appRoutes from './routes';
+import appRoutes from './src/routes';
 
 const app = express();
 app.use('/v1/api', appRoutes);
