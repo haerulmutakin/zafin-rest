@@ -1,9 +1,12 @@
 import express from 'express';
-// const appRoutes =  require('./src/routes');
+import bodyParser from 'body-parser';
+const port = process.env.PORT || 5000;
+import appRoutes from './src/routes/index.js';
 
 const app = express();
-app.get('/', (req, res) => res.send('ahaiiiii'))
-// app.use('/v1/api', appRoutes);
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/v1/api/user', appRoutes);
 
 
-app.listen(process.env.PORT, () => console.log('application running on port', process.env.PORT));
+app.listen(port, () => console.log('application running on port', port));
