@@ -6,4 +6,4 @@ app.get('/', (req, res) => res.send('ahaiiiii'))
 // app.use('/v1/api', appRoutes);
 
 
-app.listen(5000, () => console.log('application running on port', process.env.PORT));
+app.listen(process.env.PORT, () => console.log('application running on port', process.env.PORT));
