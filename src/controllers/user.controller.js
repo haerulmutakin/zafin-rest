@@ -39,10 +39,11 @@ export default class UserController {
         const result = {};
         let statusCode = 201;
         const body = req.body;
-        const {email, password} = body;
+        const {email, password, displayName} = body;
         const userPayload = {
             email,
-            password
+            password,
+            displayName
         }
 
         await firebaseSvc.auth().createUser(userPayload)
